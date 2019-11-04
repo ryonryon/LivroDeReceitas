@@ -1,14 +1,15 @@
 import styled from "@emotion/styled";
 import * as React from "react";
 
-import ListTable from "../common/ListTable";
+import TodoListTable from "../common/ListTable";
 import TextInput from "../common/TextInput";
+import Todo from "../../models/Todo";
 
 interface Props {}
 
 interface State {
-  initialItem: string[];
-  items: string[];
+  initialItem: Todo[];
+  items: Todo[];
 }
 
 class MenuListPage extends React.Component<Props, State> {
@@ -17,14 +18,14 @@ class MenuListPage extends React.Component<Props, State> {
 
     this.state = {
       initialItem: [
-        "apple",
-        "tree",
-        "pen",
-        "mike",
-        "dog",
-        "cat",
-        "iphone",
-        "book"
+        new Todo("apple", "apple apple apple apple apple apple"),
+        new Todo("tree", "apple apple apple apple apple apple"),
+        new Todo("pen", "apple apple apple apple apple apple"),
+        new Todo("mike", "apple apple apple apple apple apple"),
+        new Todo("dog", "apple apple apple apple apple apple"),
+        new Todo("cat", "apple apple apple apple apple apple"),
+        new Todo("iphone", "apple apple apple apple apple apple"),
+        new Todo("book", "apple apple apple apple apple apple")
       ],
       items: []
     };
@@ -36,7 +37,7 @@ class MenuListPage extends React.Component<Props, State> {
 
   filterList = (val: string) => {
     const updateList = this.state.initialItem.filter(item => {
-      return item.toLowerCase().search(val.toLowerCase()) !== -1;
+      return item.title.toLowerCase().search(val.toLowerCase()) !== -1;
     });
     this.setState({ items: updateList });
   };
@@ -45,7 +46,7 @@ class MenuListPage extends React.Component<Props, State> {
     return (
       <MenuListSection>
         <TextInput placeholder="search" filter={this.filterList} />
-        <ListTable titleList={["todo"]} bodyList={this.state.items} />
+        <TodoListTable bodyList={this.state.items} />
       </MenuListSection>
     );
   }

@@ -1,25 +1,29 @@
 import styled from "@emotion/styled";
 import * as React from "react";
 
+import Todo from "../../models/Todo";
+
 interface ListTableProps extends React.Attributes {
-  titleList: string[];
-  bodyList: string[];
+  bodyList: Todo[];
 }
 
-const ListTable = ({ titleList, bodyList }: ListTableProps) => (
+const ListTable = ({ bodyList }: ListTableProps) => (
   <Table>
     <thead>
       <Tr>
-        {titleList.map((title, index) => {
-          <Td key={index}>{title}</Td>;
-        })}
-        <Th>title</Th>
+        <Th>Title</Th>
+        <Th>Detail</Th>
+        <Th>Status</Th>
+        <Th>Created At</Th>
       </Tr>
     </thead>
     <tbody>
       {bodyList.map((item, index) => (
         <Tr key={index}>
-          <Td>{item}</Td>
+          <Td>{item.title}</Td>
+          <Td>{item.detail}</Td>
+          <Td>{item.isDone ? "Done" : "Not Yet"}</Td>
+          <Td>{item.createdAt.toUTCString()}</Td>
         </Tr>
       ))}
     </tbody>

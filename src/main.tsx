@@ -1,11 +1,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
+import MenuListPage from "./components/pages/MenuListPage";
+
 function App(): React.ReactElement {
   return (
-    <div>
-      <h1>Hello React!</h1>
-    </div>
+    <>
+      <MenuListPage />
+    </>
   );
 }
 

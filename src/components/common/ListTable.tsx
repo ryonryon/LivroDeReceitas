@@ -18,8 +18,8 @@ const ListTable = ({ titleList, bodyList }: ListTableProps) => (
     </thead>
     <tbody>
       {bodyList.map((item, index) => (
-        <Tr>
-          <Td key={index}>{item}</Td>
+        <Tr key={index}>
+          <Td>{item}</Td>
         </Tr>
       ))}
     </tbody>
@@ -27,7 +27,7 @@ const ListTable = ({ titleList, bodyList }: ListTableProps) => (
 );
 
 const Table = styled.table`
-  margin: auto 0;
+  margin: 8px auto;
   border-collapse: collapse;
   border-spacing: 0;
   width: 90%;

@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import * as React from "react";
 
 import ListTable from "../common/ListTable";
@@ -35,7 +36,6 @@ class MenuListPage extends React.Component<Props, State> {
 
   filterList = (val: string) => {
     const updateList = this.state.initialItem.filter(item => {
-      // return item.toLowerCase().search(e.target.value.toLowerCase()) !== -1;
       return item.toLowerCase().search(val.toLowerCase()) !== -1;
     });
     this.setState({ items: updateList });
@@ -43,14 +43,18 @@ class MenuListPage extends React.Component<Props, State> {
 
   render() {
     return (
-      <div>
-        <form action="">
-          <TextInput placeholder="search" filter={this.filterList} />
-        </form>
+      <MenuListSection>
+        <TextInput placeholder="search" filter={this.filterList} />
         <ListTable titleList={["todo"]} bodyList={this.state.items} />
-      </div>
+      </MenuListSection>
     );
   }
 }
+
+const MenuListSection = styled.div`
+  width: 80%;
+  margin: 32px auto;
+  text-align: center;
+`;
 
 export default MenuListPage;

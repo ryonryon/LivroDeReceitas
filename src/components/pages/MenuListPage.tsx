@@ -19,13 +19,13 @@ class MenuListPage extends React.Component<Props, State> {
     this.state = {
       initialItem: [
         new Todo("apple", "apple apple apple apple apple apple"),
-        new Todo("tree", "apple apple apple apple apple apple"),
-        new Todo("pen", "apple apple apple apple apple apple"),
-        new Todo("mike", "apple apple apple apple apple apple"),
-        new Todo("dog", "apple apple apple apple apple apple"),
-        new Todo("cat", "apple apple apple apple apple apple"),
-        new Todo("iphone", "apple apple apple apple apple apple"),
-        new Todo("book", "apple apple apple apple apple apple")
+        new Todo("tree", "tree tree tree tree tree tree"),
+        new Todo("pen", "pen pen pen pen pen pen"),
+        new Todo("mike", "mike mike mike mike mike mike"),
+        new Todo("dog", "dog dog dog dog dog dog"),
+        new Todo("cat", "cat cat cat cat cat cat"),
+        new Todo("iphone", "iphone iphone iphone iphone iphone iphone"),
+        new Todo("book", "book book book book book book")
       ],
       items: []
     };
